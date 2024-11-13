@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition for Women</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Overall Layout */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #FF9800;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraphs */
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Button Styles */
+        .btn-alt {
+            display: inline-block;
+            background-color: #FF9800;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-alt:hover {
+            background-color: #FB8C00;
+            transform: translateY(-2px);
+        }
+
+        /* Question Section */
+        .question-section {
+            margin-top: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-section h2 {
+            font-size: 1.8rem;
+            color: #FF9800;
+            margin-bottom: 20px;
+        }
+
+        .question-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .question-form input, .question-form textarea {
+            padding: 12px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .question-form button {
+            padding: 12px;
+            background-color: #FF9800;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .question-form button:hover {
+            background-color: #FB8C00;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Nutrition Tips</h1>
+    </header>
+    <section class="content">
+        <img src="/static/images/nutrition.jpg" alt="Healthy Eating" class="content-img">
+        <p>A balanced diet is key to a healthy life. Here you'll find tips on nutrition, vitamins, and diet plans to support women's health. Proper nutrition is essential for maintaining energy, preventing chronic diseases, and promoting overall well-being. Women’s unique health needs—such as during pregnancy, menopause, or menstrual cycles—require special attention to dietary choices.</p>
+        <p>Eating a variety of nutrient-rich foods, staying hydrated, and avoiding excessive sugar and processed foods can greatly improve your overall health. If you have specific dietary concerns or conditions like PCOS or anemia, consulting with a nutritionist is a great step toward tailored advice.</p>
+        <p>Incorporating a mix of fruits, vegetables, whole grains, and healthy fats into your meals will help you feel energized and nourish your body. Remember, balance and moderation are key when it comes to nutrition!</p>
+    </section>
+    <div class="question-section">
+        <h2>Have Questions About Nutrition?</h2>
+        <p>Feel free to ask any questions related to nutrition, diet plans, or healthy eating!</p>
+        <form class="question-form">
+            <input type="text" placeholder="Your Name" required>
+            <textarea rows="4" placeholder="Your Question" required></textarea>
+            <button type="submit">Submit Question</button>
+        </form>
+    </div>
+    <a href="/" class="btn-alt">Back to Home</a>
+</body>
+</html>

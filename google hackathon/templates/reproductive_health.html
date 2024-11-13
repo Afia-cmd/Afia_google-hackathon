@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductive Health</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Overall Layout */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #FF4081;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraphs */
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Button Styles */
+        .btn-alt {
+            display: inline-block;
+            background-color: #FF4081;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-alt:hover {
+            background-color: #F50057;
+            transform: translateY(-2px);
+        }
+
+        /* Question Section */
+        .question-section {
+            margin-top: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-section h2 {
+            font-size: 1.8rem;
+            color: #FF4081;
+            margin-bottom: 20px;
+        }
+
+        .question-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .question-form input, .question-form textarea {
+            padding: 12px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .question-form button {
+            padding: 12px;
+            background-color: #FF4081;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .question-form button:hover {
+            background-color: #F50057;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Reproductive Health</h1>
+    </header>
+    <section class="content">
+        <img src="/static/images/reproductive_health.jpg" alt="Reproductive Health" class="content-img">
+        <p>Reproductive health covers a wide range of topics, including menstrual health, family planning, and maternal care. It's important for women to maintain reproductive wellness throughout their lives. From understanding your cycle to making informed decisions about contraception and pregnancy, this page provides useful information to guide your health journey.</p>
+        <p>Some key topics in reproductive health include:</p>
+        <ul>
+            <li>Understanding the menstrual cycle and common issues like PMS.</li>
+            <li>Family planning and contraception options for women.</li>
+            <li>Maternal health and prenatal care.</li>
+            <li>Managing menopause and hormonal changes.</li>
+        </ul>
+        <p>Maintaining reproductive health is essential for overall well-being and for planning a healthy future.</p>
+    </section>
+    <div class="question-section">
+        <h2>Have Questions About Reproductive Health?</h2>
+        <p>We're here to help! Submit your questions, and we'll provide the answers to support your reproductive health journey.</p>
+        <form class="question-form">
+            <input type="text" placeholder="Your Name" required>
+            <textarea rows="4" placeholder="Your Question" required></textarea>
+            <button type="submit">Submit Question</button>
+        </form>
+    </div>
+    <a href="/" class="btn-alt">Back to Home</a>
+</body>
+</html>

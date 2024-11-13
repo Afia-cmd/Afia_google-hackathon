@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Care Tips</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Overall Layout */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #673AB7;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraphs */
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Button Styles */
+        .btn-alt {
+            display: inline-block;
+            background-color: #673AB7;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-alt:hover {
+            background-color: #5E35B1;
+            transform: translateY(-2px);
+        }
+
+        /* Question Section */
+        .question-section {
+            margin-top: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-section h2 {
+            font-size: 1.8rem;
+            color: #673AB7;
+            margin-bottom: 20px;
+        }
+
+        .question-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .question-form input, .question-form textarea {
+            padding: 12px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .question-form button {
+            padding: 12px;
+            background-color: #673AB7;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .question-form button:hover {
+            background-color: #5E35B1;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Self-Care Tips</h1>
+    </header>
+    <section class="content">
+        <img src="/static/images/self_care.jpg" alt="Self Care" class="content-img">
+        <p>Self-care includes emotional, physical, and mental health practices that help you feel your best. Taking time for self-care is essential for maintaining balance in your life, reducing stress, and improving overall well-being. Whether it's taking a walk, practicing mindfulness, or simply getting enough rest, self-care helps recharge your mind and body.</p>
+        <p>Here are some practical self-care tips:</p>
+        <ul>
+            <li>Prioritize sleep and ensure you're getting 7-9 hours per night.</li>
+            <li>Practice mindfulness or meditation to clear your mind.</li>
+            <li>Eat a balanced diet that includes nutrient-rich foods.</li>
+            <li>Engage in physical activity, whether it's yoga, walking, or more intense exercise.</li>
+            <li>Set boundaries to protect your personal time and energy.</li>
+        </ul>
+        <p>Remember, self-care isn't a luxury—it's a necessity for maintaining your health and happiness.</p>
+    </section>
+    <div class="question-section">
+        <h2>Have Questions About Self-Care?</h2>
+        <p>We're here to help! Submit your questions, and we'll provide the answers to guide you in your self-care journey.</p>
+        <form class="question-form">
+            <input type="text" placeholder="Your Name" required>
+            <textarea rows="4" placeholder="Your Question" required></textarea>
+            <button type="submit">Submit Question</button>
+        </form>
+    </div>
+    <a href="/" class="btn-alt">Back to Home</a>
+</body>
+</html>

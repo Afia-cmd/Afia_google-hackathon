@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girl Care</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Global styles */
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #a0ff61;
+        }
+
+        /* Header styles */
+        .header {
+            padding: 40px;
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        /* Banner image */
+        .banner-img {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button container */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .button-container a {
+            display: inline-block;
+            background-color: #ff6f61;
+            color: white;
+            padding: 20px 30px;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            width: 200px;
+            text-align: center;
+        }
+
+        .button-container a:hover {
+            background-color: #ff4d40;
+            transform: translateY(-3px);
+        }
+
+        /* Chatbot Section */
+        .chatbot-section {
+            margin-top: 50px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .chatbot-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .chatbot-section input {
+            width: calc(100% - 40px);
+            padding: 12px 20px;
+            font-size: 1em;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        .chatbot-section button {
+            background-color: #ff6f61;
+            color: white;
+            font-size: 1.1em;
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s ease;
+        }
+
+        .chatbot-section button:hover {
+            background-color: #ff4d40;
+        }
+
+        .response-box {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 50px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column;
+            }
+
+            .button-container a {
+                width: 80%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Welcome to Girl Care!</h1>
+        <p>Empowering women with health resources, support, and care.</p>
+        <p>Hey girl! Not feeling quite okay today?</p>
+        <p>Don't worry we've got you covered. Tell us what the issue is and let's get you back on your feet!</p>
+    </header>
+
+    <!-- Banner Image -->
+    <section class="intro">
+        <img src="/static/images/welcome_banner.jpg" alt="Women supporting each other" class="banner-img">
+    </section>
+
+    <!-- Common Health Topics Section -->
+    <section class="info-section">
+        <h2>Common Health Topics</h2>
+        <div class="button-container">
+            <a href="{{ url_for('reproductive_health') }}">Reproductive Health</a>
+            <a href="{{ url_for('mental_health') }}">Mental Health</a>
+            <a href="{{ url_for('nutrition') }}">Nutrition</a>
+            <a href="{{ url_for('self_care_tips') }}">Self-Care Tips</a>
+            <a href="{{ url_for('doctor_contacts') }}">View Contacts</a>
+        </div>
+    </section>
+
+    <!-- Chatbot Section -->
+    <section class="chatbot-section">
+        <h2>Chat with AI Healthcare Bot</h2>
+        <input type="text" id="query" placeholder="Ask a healthcare question" />
+        <input type="text" id="location" placeholder="Enter your location (e.g., city)" />
+        <button onclick="sendQuery()">Ask</button>
+
+        <div class="response-box" id="response"></div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Girl Care - All rights reserved.</p>
+    </footer>
+
+    <!-- Chatbot Script -->
+    <script>
+        function sendQuery() {
+            const query = $('#query').val();
+            const location = $('#location').val();
+
+            $.ajax({
+                url: 'http://localhost:5000/query',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ query, location }),
+                success: function(response) {
+                    let htmlContent = "<h4>Health Information:</h4><p>" + response.health_info + "</p>";
+
+                    if (response.clinics.length > 0) {
+                        htmlContent += "<h4>Nearby Clinics:</h4><ul>";
+                        response.clinics.forEach(clinic => {
+                            htmlContent += "<li>" + clinic.name + " - " + clinic.vicinity + "</li>";
+                        });
+                        htmlContent += "</ul>";
+                    }
+
+                    htmlContent += "<h4>Helplines:</h4><ul>";
+                    for (const key in response.helplines) {
+                        htmlContent += "<li>" + key + ": " + response.helplines[key] + "</li>";
+                    }
+                    htmlContent += "</ul>";
+
+                    $('#response').html(htmlContent);
+                },
+                error: function(error) {
+                    console.error(error);
+                    $('#response').html("<p>Error occurred. Please try again.</p>");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
